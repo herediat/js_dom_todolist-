@@ -17290,8 +17290,14 @@ body #Todolist .container_todo_list .liste_taches .button .modifie_tache {
 body #Todolist .container_todo_list .liste_taches .button .poubelle {
   background-color: red;
 }
-body #Todolist .container_todo_list .liste_taches .button i .line-through {
-  background: blue;
+body #Todolist .container_todo_list .liste_taches .bg-blue {
+  background-color: blue;
+}
+body #Todolist .container_todo_list .liste_taches .bg-red {
+  background-color: red;
+}
+body #Todolist .container_todo_list .liste_taches .bg-yellow {
+  background-color: yellow;
 }
 body #Todolist .en-tête {
   margin-bottom: 30px;

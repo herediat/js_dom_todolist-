@@ -20,6 +20,7 @@ ajoutBtnIcons.addEventListener("click", function(e){
         // Div Liste de tâches
         let listeTaches = document.createElement("div")
         listeTaches.classList.add("liste_taches")
+        console.log(listeTaches);
         //Li
         let mesLi = document.createElement("li")
         mesLi.innerHTML = input.value
@@ -47,7 +48,7 @@ ajoutBtnIcons.addEventListener("click", function(e){
         divButton.appendChild(verifBtn)
         divButton.appendChild(modifBtn)
         divButton.appendChild(poubelBtn)
-        // console.log(monUl);
+
         //APPEND TOUT LES ÉLÉMENTS DANS LA MAIN DIV
         monIdTodo.appendChild(monUl)
         // console.log(monIdTodo);
@@ -55,15 +56,28 @@ ajoutBtnIcons.addEventListener("click", function(e){
 
         // FAIRE FONCTIONNER LES BOUTONS CHECK & POUBELLE
         listeTaches.addEventListener("click", function(e){
-            // console.log(e.target);
-
+            // console.log('test');
             let contenu = e.target;
-            if(contenu.classList[0] === "tache_fini"){
-                
-                let faire = contenu.parentElement;
-                let faire2 = faire.parentElement;
-                faire2.classList.add("line-through");
+            let arrContenu = Array.from(contenu.classList)
+            // console.log(arrContenu);
+            if(arrContenu.includes('fa-check') || arrContenu.includes('tache_fini')){
+                // console.log('check');
+                mesLi.classList.add("bg-blue")
+                mesLi.classList.toggle("bg-white")
+            } else if(arrContenu.includes('fa-edit') || arrContenu.includes('modifie_tache')){
+                // console.log('edit');
+                mesLi.classList.add("bg-red")
+                mesLi.classList.toggle("bg-white")
+                // mesLi.remove(mesLi)
+            } else if(arrContenu.includes('fa-trash') || arrContenu.includes('poubelle')){
+                // console.log('trash');
+                mesLi.classList.add("bg-yellow")
+                mesLi.classList.toggle("bg-white")
+                // mesLi.remove(mesLi)
+            }else{
+                console.log("none");
             }
+            
 
 
         })
