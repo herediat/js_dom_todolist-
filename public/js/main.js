@@ -36,10 +36,14 @@ ajoutBtnIcons.addEventListener("click", function(e){
         let modifBtn = document.createElement("button")
         modifBtn.classList.add("modifie_tache")
         modifBtn.innerHTML = '<i class="fas fa-edit"></i>'
+        modifBtn.onclick = function(){
+            modifFonctionne(mesLi)
+        }
         //Le BOUTON QUI CHECK QUE LA TACHE EST FINI
         let poubelBtn = document.createElement("button")
         poubelBtn.classList.add("poubelle")
         poubelBtn.innerHTML = '<i class="fas fa-trash"></i>'
+        console.log(poubelBtn);
 
         //APPEND UN ENFANT A SON PARENT
         monUl.appendChild(listeTaches)
@@ -66,19 +70,18 @@ ajoutBtnIcons.addEventListener("click", function(e){
                 mesLi.classList.toggle("bg-white")
             } else if(arrContenu.includes('fa-edit') || arrContenu.includes('modifie_tache')){
                 // console.log('edit');
-                mesLi.classList.add("bg-red")
-                mesLi.classList.toggle("bg-white")
+                // mesLi.classList.add("bg-red")
+                // mesLi.classList.toggle("bg-white")
+
+                // alert("Modifie mon text")
                 // mesLi.remove(mesLi)
             } else if(arrContenu.includes('fa-trash') || arrContenu.includes('poubelle')){
                 // console.log('trash');
-                mesLi.classList.add("bg-yellow")
-                mesLi.classList.toggle("bg-white")
-                // mesLi.remove(mesLi)
+                mesLi.remove()
             }else{
                 console.log("none");
             }
             
-
 
         })
 
@@ -92,3 +95,21 @@ ajoutBtnIcons.addEventListener("click", function(e){
     
 
 })
+
+function modifFonctionne(e){
+    // prompt("ça dit quoi ?")
+
+    let modifValeur = prompt("Wesh Bien ou Bien? Y'a moyen tu modifie ta Tâche steplait ??", e.firstChild.nodeValue)
+    e.firstChild.nodeValue = modifValeur
+
+    // let valeur = e.firstChild
+    // console.log(valeur);
+
+}
+
+// function supprimerTout(){
+//     let prendreMonUl = document.querySelectorAll(".container_todo_list");
+//     for(let i = 0; i < prendreMonUl.length; i++);
+//     supprBtnIcons[i].remove();
+// }
+
