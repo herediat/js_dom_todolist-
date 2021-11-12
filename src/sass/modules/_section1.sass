@@ -1,0 +1,124 @@
+* 
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body
+    background: purple
+    
+    #Todolist
+        color: white
+        padding: 20px
+        width: 600px
+        margin: 0 auto
+        height: auto
+
+        .container_todo_list
+            list-style-type: non
+            margin: 10px 0 0
+
+            .liste_taches
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: space-between
+                overflow: hidden
+
+                .contenu_liste
+                    width: 100%
+                    background-color: white
+                    color: black
+                    height: 40px
+                    line-height: 40px
+                    padding: 0 10px
+                
+                .button
+                    position: absolute
+                    right: 0
+                    button
+                        width: 40px
+                        height: 50px
+                        border: none
+                        color: white
+                        outline: none
+                        cursor: pointer
+
+                    .tache_fini
+                        background-color: green
+                        margin-right: -5px
+                    .modifie_tache
+                        background-color: blue
+                        margin-right: -5px
+                    .poubelle
+                        background-color: red
+                    i
+                        .line-through
+                            background: blue
+                        // pointer-events: none
+
+
+
+        .en-tête
+            margin-bottom: 30px
+            text-align: center
+
+            h1
+                display: inline-block
+                position: relative
+                text-transform: uppercase
+                font-size: 2.5rem
+            h1:before
+                content: ""
+                position: absolute
+                left: 0
+                right: 0
+                margin: 0 auto
+                bottom: 0
+                width: 10%
+                height: 2px
+                background-color: white
+                transform: .5s
+            h1:hover:before
+                width: 80%
+
+        .input-container
+            width: 100%
+            text-align: center
+            position: relative
+            margin-bottom: 50px
+
+            .ajout_tache
+                width: 100%
+                height: 40px
+                padding: 0 0 0 10px
+                font-size: 1.2rem
+                outline: none
+                border: none
+
+            .add-item, .deleteBtn
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+                width: 40px
+                height: 40px
+                background-color: red
+                line-height: 40px
+                color: white
+                cursor: pointer 
+            :nth-child(2)
+                right: 40px
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                width: 40px
+                height: 40px
+                background-color: orangered
+                line-height: 40px
+                cursor: pointer
+
+
+
+
+
+
