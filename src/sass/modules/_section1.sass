@@ -23,10 +23,11 @@ body
                 align-items: center
                 justify-content: space-between
                 overflow: hidden
+                border-radius: 10px
 
                 .contenu_liste
                     width: 100%
-                    background-color: white
+                    background: white
                     color: black
                     height: 40px
                     line-height: 40px
@@ -46,18 +47,16 @@ body
                     .tache_fini
                         background-color: green
                         margin-right: -5px
+                        border-radius: 10px
                     .modifie_tache
                         background-color: blue
                         margin-right: -5px
+                        border-radius: 10px
                     .poubelle
                         background-color: red
-                    i
+                        border-radius: 10px
                 .bg-blue
                     background-color: blue
-                .bg-red
-                    background-color: red
-                .bg-yellow
-                    background-color: yellow
 
 
 
@@ -97,6 +96,9 @@ body
                 font-size: 1.2rem
                 outline: none
                 border: none
+                border-radius: 10px
+                background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+
 
             .add-item, .deleteBtn
                 position: absolute
@@ -119,6 +121,18 @@ body
                 background-color: orangered
                 line-height: 40px
                 cursor: pointer
+
+        .mes_filtres
+            display: flex
+            justify-content: center
+
+            button
+                margin-top: 10%
+                margin-right: 3%
+                margin-left: 3%
+                padding: 3%
+                background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+                border-radius: 10px
 
 
 

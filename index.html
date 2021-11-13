@@ -16,18 +16,13 @@
         <div class="input-container">
             <input type="text" class="ajout_tache" placeholder="Ajoutez un tache...">
             <i class="fas fa-plus add-item"></i>
-            <i class="fas fa-trash-alt deleteBtn" onclick="supprimerTout(i)"></i>
+            <i class="fas fa-trash-alt deleteBtn" onclick="supprBtnIconsElements()"></i>
         </div>
-        <!-- <ul class="container_todo_list">
-            <div class="liste_taches">
-                <li class="contenu_liste"></li>
-                <div class="button">
-                    <button class="tache_fini"><i class="fas fa-check"></i></button>
-                    <button class="modifie_tache"><i class="fas fa-edit"></i></button>
-                    <button class="poubelle"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-            </ul> -->
+        <div class="mes_filtres">
+                <button class="premierFiltre">Faits</button>
+                <button class="deuxiemeFiltre">Non-Faits</button>
+                <button class="troisiemeFiltre">Touts</button></div>
+        </div>
     </div>
 
     <script src="./public/js/main.js"></script>

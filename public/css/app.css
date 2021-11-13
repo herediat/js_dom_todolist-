@@ -17258,10 +17258,11 @@ body #Todolist .container_todo_list .liste_taches {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  border-radius: 10px;
 }
 body #Todolist .container_todo_list .liste_taches .contenu_liste {
   width: 100%;
-  background-color: white;
+  background: white;
   color: black;
   height: 40px;
   line-height: 40px;
@@ -17282,22 +17283,19 @@ body #Todolist .container_todo_list .liste_taches .button button {
 body #Todolist .container_todo_list .liste_taches .button .tache_fini {
   background-color: green;
   margin-right: -5px;
+  border-radius: 10px;
 }
 body #Todolist .container_todo_list .liste_taches .button .modifie_tache {
   background-color: blue;
   margin-right: -5px;
+  border-radius: 10px;
 }
 body #Todolist .container_todo_list .liste_taches .button .poubelle {
   background-color: red;
+  border-radius: 10px;
 }
 body #Todolist .container_todo_list .liste_taches .bg-blue {
   background-color: blue;
-}
-body #Todolist .container_todo_list .liste_taches .bg-red {
-  background-color: red;
-}
-body #Todolist .container_todo_list .liste_taches .bg-yellow {
-  background-color: yellow;
 }
 body #Todolist .en-tête {
   margin-bottom: 30px;
@@ -17337,6 +17335,8 @@ body #Todolist .input-container .ajout_tache {
   font-size: 1.2rem;
   outline: none;
   border: none;
+  border-radius: 10px;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 }
 body #Todolist .input-container .add-item, body #Todolist .input-container .deleteBtn {
   position: absolute;
@@ -17360,6 +17360,18 @@ body #Todolist .input-container :nth-child(2) {
   background-color: orangered;
   line-height: 40px;
   cursor: pointer;
+}
+body #Todolist .mes_filtres {
+  display: flex;
+  justify-content: center;
+}
+body #Todolist .mes_filtres button {
+  margin-top: 10%;
+  margin-right: 3%;
+  margin-left: 3%;
+  padding: 3%;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=app.css.map */

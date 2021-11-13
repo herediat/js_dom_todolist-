@@ -55,28 +55,19 @@ ajoutBtnIcons.addEventListener("click", function(e){
 
         //APPEND TOUT LES ÉLÉMENTS DANS LA MAIN DIV
         monIdTodo.appendChild(monUl)
-        // console.log(monIdTodo);
-        // console.log(monIdTodo);
 
-        // FAIRE FONCTIONNER LES BOUTONS CHECK & POUBELLE
+
+        // FAIRE FONCTIONNER LES BOUTONS CHECK, EDIT & POUBELLE
+
         listeTaches.addEventListener("click", function(e){
-            // console.log('test');
             let contenu = e.target;
             let arrContenu = Array.from(contenu.classList)
-            // console.log(arrContenu);
             if(arrContenu.includes('fa-check') || arrContenu.includes('tache_fini')){
-                // console.log('check');
                 mesLi.classList.add("bg-blue")
                 mesLi.classList.toggle("bg-white")
             } else if(arrContenu.includes('fa-edit') || arrContenu.includes('modifie_tache')){
-                // console.log('edit');
-                // mesLi.classList.add("bg-red")
-                // mesLi.classList.toggle("bg-white")
 
-                // alert("Modifie mon text")
-                // mesLi.remove(mesLi)
             } else if(arrContenu.includes('fa-trash') || arrContenu.includes('poubelle')){
-                // console.log('trash');
                 mesLi.remove()
             }else{
                 console.log("none");
@@ -85,31 +76,89 @@ ajoutBtnIcons.addEventListener("click", function(e){
 
         })
 
-        //QUAND ON CLICK SUR Le BOUTONS, CELA VIDE LA VALEUR DU INPUT
+        //QUAND ON CLICK SUR Le BOUTONS "+", CELA VIDE LA VALEUR DU INPUT
         input.value = ""
-
-
-
-
     }
     
 
 })
 
+// ################## BOUTON QUI MODIFIE LA TACHE ###################
 function modifFonctionne(e){
-    // prompt("ça dit quoi ?")
-
     let modifValeur = prompt("Wesh Bien ou Bien? Y'a moyen tu modifie ta Tâche steplait ??", e.firstChild.nodeValue)
     e.firstChild.nodeValue = modifValeur
-
-    // let valeur = e.firstChild
-    // console.log(valeur);
-
 }
 
-// function supprimerTout(){
-//     let prendreMonUl = document.querySelectorAll(".container_todo_list");
-//     for(let i = 0; i < prendreMonUl.length; i++);
-//     supprBtnIcons[i].remove();
-// }
+function supprBtnIconsElements(){
+    let prendreMonUl = document.querySelectorAll(".container_todo_list")
+    for( let i = 0; i < prendreMonUl.length; i++){
+        prendreMonUl[i].remove();
+    }
+}
+
+
+
+// ###################### MES 3 FILTRES ############################
+
+let mesFiltres = document.querySelector(".mes_filtres")
+console.log(mesFiltres);
+
+let filtre1 = document.querySelector(".premierFiltre")
+console.log(filtre1);
+
+let filtre2 = document.querySelector(".deuxiemeFiltre")
+console.log(filtre2);
+
+let filtre3 = document.querySelector(".troisiemeFiltre")
+console.log(filtre3);
+
+filtre1.addEventListener("click", function(e) {
+    let contenu = e.target
+    let arrContenu= Array.from(contenu.classList)
+
+    if (contenu) {
+        console.log("Hello");
+    }else{
+        console.log("none");
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let divFiltres = document.createElement("div")
+// console.log(divFiltres);
+
+// let filtre1 = document.createElement("button")
+// filtre1.classList.add("premierFiltre")
+// divFiltres.appendChild(filtre1)
+// filtre1.document.innerHTML = "button"
+
+// let filtre2 = document.createElement("button")
+// filtre2.classList.add("deuxiemeFiltre")
+// divFiltres.appendChild(filtre2)
+// filtre2.document.innerHTML = "button"
+
+// let filtre3 = document.createElement("button")
+// filtre3.classList.add("troisiemeFiltre")
+// divFiltres.appendChild(filtre3)
+// filtre3.document.innerHTML = "button"
+
 
