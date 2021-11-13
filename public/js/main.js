@@ -39,7 +39,7 @@ ajoutBtnIcons.addEventListener("click", function(e){
         modifBtn.onclick = function(){
             modifFonctionne(mesLi)
         }
-        //Le BOUTON QUI CHECK QUE LA TACHE EST FINI
+        //Le BOUTON QUI SUPPRIME LES ÉLÉMENTS 1 à 1
         let poubelBtn = document.createElement("button")
         poubelBtn.classList.add("poubelle")
         poubelBtn.innerHTML = '<i class="fas fa-trash"></i>'
@@ -73,11 +73,24 @@ ajoutBtnIcons.addEventListener("click", function(e){
                 console.log("none");
             }
             
+            //###########################################################
 
+
+            filtre1.addEventListener("click", function(e) {
+                contenu = e.target;
+                if (arrContenu != 'fa-check' || arrContenu != 'tache_fini'){
+                    listeTaches.remove()
+                    
+                }else{
+                    console.log("none");
+                }
+            })
         })
 
         //QUAND ON CLICK SUR Le BOUTONS "+", CELA VIDE LA VALEUR DU INPUT
         input.value = ""
+        // if(arrContenu !== ('fa-check' || arrContenu !== ('tache_fini'))
+
     }
     
 
@@ -85,7 +98,7 @@ ajoutBtnIcons.addEventListener("click", function(e){
 
 // ################## BOUTON QUI MODIFIE LA TACHE ###################
 function modifFonctionne(e){
-    let modifValeur = prompt("Wesh Bien ou Bien? Y'a moyen tu modifie ta Tâche steplait ??", e.firstChild.nodeValue)
+    let modifValeur = prompt("Wesh Bien ou Bien? Y'a moyen tu modifies ta Tâche steplait ??", e.firstChild.nodeValue)
     e.firstChild.nodeValue = modifValeur
 }
 
@@ -112,16 +125,6 @@ console.log(filtre2);
 let filtre3 = document.querySelector(".troisiemeFiltre")
 console.log(filtre3);
 
-filtre1.addEventListener("click", function(e) {
-    let contenu = e.target
-    let arrContenu= Array.from(contenu.classList)
-
-    if (contenu) {
-        console.log("Hello");
-    }else{
-        console.log("none");
-    }
-})
 
 
 
