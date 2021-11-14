@@ -10,7 +10,23 @@ console.log(ajoutBtnIcons);
 let supprBtnIcons = document.querySelector(".deleteBtn")
 console.log(supprBtnIcons);
 
+// ###################### MES 3 FILTRES ############################
 
+let mesFiltres = document.querySelector(".mes_filtres")
+console.log(mesFiltres);
+
+let filtre1 = document.querySelector(".premierFiltre")
+console.log(filtre1);
+
+let filtre2 = document.querySelector(".deuxiemeFiltre")
+console.log(filtre2);
+
+let filtre3 = document.querySelector(".troisiemeFiltre")
+console.log(filtre3);
+
+
+
+//################### TOUT LES  EVENTS ################################
 ajoutBtnIcons.addEventListener("click", function(e){
     if(input.value.trim()){
 
@@ -25,7 +41,7 @@ ajoutBtnIcons.addEventListener("click", function(e){
         let mesLi = document.createElement("li")
         mesLi.innerHTML = input.value
         mesLi.classList.add("contenu_liste")
-        //Bouton DIV
+        //Boutons DIV
         let divButton = document.createElement("div")
         divButton.classList.add("button")
         //Le BOUTON QUI CHECK QUE LA TACHE EST FINI
@@ -73,28 +89,41 @@ ajoutBtnIcons.addEventListener("click", function(e){
                 console.log("none");
             }
             
+
+            
             //###########################################################
 
 
-            filtre1.addEventListener("click", function(e) {
-                contenu = e.target;
-                if (arrContenu != 'fa-check' || arrContenu != 'tache_fini'){
-                    listeTaches.remove()
+            // filtre1.addEventListener("click", function(e) {
+            //     contenu = e.target;
+            //     if (arrContenu != 'fa-check' || arrContenu != 'tache_fini'){
+            //         listeTaches.remove()
                     
-                }else{
-                    console.log("none");
+            //     }else{
+            //         console.log("none");
+            //     }
+            // })
+
+            filtre1.addEventListener("click", () => {
+                if(mesLi.classList === "contenu_liste"){
+                    mesLi.style.display = "none"
+                    
+                }
+            })
+
+            filtre2.addEventListener("click", () => {
+                if(mesLi.classList.contains("bg-blue") == true){
+                    mesLi.style.display = "none"
+                    
                 }
             })
         })
 
         //QUAND ON CLICK SUR Le BOUTONS "+", CELA VIDE LA VALEUR DU INPUT
         input.value = ""
-        // if(arrContenu !== ('fa-check' || arrContenu !== ('tache_fini'))
-
     }
-    
-
 })
+
 
 // ################## BOUTON QUI MODIFIE LA TACHE ###################
 function modifFonctionne(e){
@@ -102,66 +131,10 @@ function modifFonctionne(e){
     e.firstChild.nodeValue = modifValeur
 }
 
+//########################## BOUTON QUI SUPPRIME LA TACHE ################################
 function supprBtnIconsElements(){
     let prendreMonUl = document.querySelectorAll(".container_todo_list")
     for( let i = 0; i < prendreMonUl.length; i++){
         prendreMonUl[i].remove();
     }
 }
-
-
-
-// ###################### MES 3 FILTRES ############################
-
-let mesFiltres = document.querySelector(".mes_filtres")
-console.log(mesFiltres);
-
-let filtre1 = document.querySelector(".premierFiltre")
-console.log(filtre1);
-
-let filtre2 = document.querySelector(".deuxiemeFiltre")
-console.log(filtre2);
-
-let filtre3 = document.querySelector(".troisiemeFiltre")
-console.log(filtre3);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let divFiltres = document.createElement("div")
-// console.log(divFiltres);
-
-// let filtre1 = document.createElement("button")
-// filtre1.classList.add("premierFiltre")
-// divFiltres.appendChild(filtre1)
-// filtre1.document.innerHTML = "button"
-
-// let filtre2 = document.createElement("button")
-// filtre2.classList.add("deuxiemeFiltre")
-// divFiltres.appendChild(filtre2)
-// filtre2.document.innerHTML = "button"
-
-// let filtre3 = document.createElement("button")
-// filtre3.classList.add("troisiemeFiltre")
-// divFiltres.appendChild(filtre3)
-// filtre3.document.innerHTML = "button"
-
-
